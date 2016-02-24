@@ -45,7 +45,7 @@ var
   listviewitem: TListViewItem;
   ms: TMemoryStream;
 begin
-  // MemoryStream
+  // MemoryStream ver2
   ms := TMemoryStream.Create;
   backGetAll.Execute;
 
