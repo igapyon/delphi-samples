@@ -70,6 +70,7 @@ procedure TForm2.Button2Click(Sender: TObject);
 var
   photoitem: TPhotoItemVO;
 begin
+  // ÉRÉÅÉìÉg
   photoitem := TPhotoItemVO.Create;
   photoitem.PhotoId := 5;
 
