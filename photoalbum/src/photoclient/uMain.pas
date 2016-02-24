@@ -45,6 +45,7 @@ var
   listviewitem: TListViewItem;
   ms: TMemoryStream;
 begin
+  // MemoryStream
   ms := TMemoryStream.Create;
   backGetAll.Execute;
 
@@ -70,8 +71,7 @@ var
   photoitem: TPhotoItemVO;
 begin
   photoitem := TPhotoItemVO.Create;
-  photoitem.PhotoId:=5;
-
+  photoitem.PhotoId := 5;
 
   backPostItem.ClearBody;
   backPostItem.AddBody(TJson.ObjectToJsonObject(photoitem).ToString,
