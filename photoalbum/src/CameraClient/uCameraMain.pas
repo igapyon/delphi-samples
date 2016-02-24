@@ -63,6 +63,7 @@ var
   ms: TMemoryStream;
 begin
   // いったんクリアします。
+  // ここにコメントを書く。
   ListView1.Items.Clear;
 
   ms := TMemoryStream.Create;
