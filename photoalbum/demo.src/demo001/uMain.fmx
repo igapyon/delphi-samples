@@ -1,0 +1,47 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Image1: TImage
+    MultiResBitmap = <
+      item
+      end>
+    Position.X = 16.000000000000000000
+    Position.Y = 64.000000000000000000
+    Size.Width = 601.000000000000000000
+    Size.Height = 385.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object ToolBar1: TToolBar
+    Size.Width = 640.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object Button1: TButton
+      Action = TakePhotoFromCameraAction1
+      Align = Center
+      Enabled = True
+      ImageIndex = -1
+      Size.Width = 208.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = #20889#30495#12434#25774#12427
+      Visible = True
+    end
+  end
+  object ActionList1: TActionList
+    Left = 104
+    Top = 160
+    object TakePhotoFromCameraAction1: TTakePhotoFromCameraAction
+      Category = #12513#12487#12451#12450' '#12521#12452#12502#12521#12522
+      OnDidFinishTaking = TakePhotoFromCameraAction1DidFinishTaking
+    end
+  end
+end

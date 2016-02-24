@@ -1,0 +1,24 @@
+/*
+ * ER/Studio Data Architect SQL コード生成
+ * プロジェクト:PhotoAlbum.dm1
+ *
+ * 作成日      :2016/02/16 (火) 00:44:25
+ * 対象DBMS    :InterBase XE3
+ */
+
+/* 
+ * TABLE: PHOTOALBUM 
+ */
+
+CREATE TABLE PHOTOALBUM(
+    PHOTOID        INTEGER         NOT NULL,
+    PHOTOTITLE     VARCHAR(50)     NOT NULL,
+    PHOTODESC      VARCHAR(250),
+    CREATEDDATE    TIMESTAMP       NOT NULL,
+    PHOTODATA      BLOB,
+    CONSTRAINT PKEY_PHOTOALBUM PRIMARY KEY (PHOTOID)
+)
+;
+
+
+

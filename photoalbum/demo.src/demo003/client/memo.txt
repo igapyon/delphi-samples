@@ -1,0 +1,7 @@
+ƒVƒ“ƒvƒ‹‚É©—Í‚Å‘‚­
+
+
+
+
+  BackendEndpoint1.Execute;
+  ShowMessage(BackendEndpoint1.Response.JSONText);

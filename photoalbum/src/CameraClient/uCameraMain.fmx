@@ -1,0 +1,182 @@
+object frmMain: TfrmMain
+  Left = 0
+  Top = 0
+  Caption = 'Form2'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object TabControl1: TTabControl
+    Align = Client
+    Size.Width = 640.000000000000000000
+    Size.Height = 400.000000000000000000
+    Size.PlatformDefault = False
+    TabIndex = 1
+    TabOrder = 3
+    TabPosition = PlatformDefault
+    object tabitemTake: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 46.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Take!'
+      ExplicitSize.cx = 46.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      object toolbarTop: TToolBar
+        Size.Width = 50.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object btnTake: TButton
+          Action = TakePhotoFromCameraAction1
+          Align = Center
+          Enabled = True
+          ImageIndex = -1
+          Size.Width = 80.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = 'Take!'
+          Visible = True
+        end
+      end
+      object Image1: TImage
+        MultiResBitmap = <
+          item
+          end>
+        Align = Client
+        Size.Width = 50.000000000000000000
+        Size.Height = 10.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+    object tabitemList: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 44.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = #19968#35239
+      ExplicitSize.cx = 44.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      object ToolBar1: TToolBar
+        Size.Width = 640.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object btnList: TButton
+          Align = Center
+          Size.Width = 80.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = #19968#35239#21462#24471
+          OnClick = btnListClick
+        end
+      end
+      object ListView1: TListView
+        ItemAppearanceClassName = 'TImageListItemBottomDetailAppearance'
+        ItemEditAppearanceClassName = 'TImageListItemBottomDetailShowCheckAppearance'
+        HeaderAppearanceClassName = 'TListHeaderObjects'
+        FooterAppearanceClassName = 'TListHeaderObjects'
+        Align = Client
+        Size.Width = 640.000000000000000000
+        Size.Height = 334.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+      end
+    end
+  end
+  object Layout1: TLayout
+    Align = Bottom
+    Position.Y = 400.000000000000000000
+    Size.Width = 640.000000000000000000
+    Size.Height = 80.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 8
+    object Layout2: TLayout
+      Align = Top
+      Size.Width = 640.000000000000000000
+      Size.Height = 41.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object edtTitle: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Left
+        TabOrder = 0
+        Text = #20170#26085#12398#19968#26522
+        Position.X = 9.000000000000000000
+        Position.Y = 9.000000000000000000
+        Margins.Left = 9.000000000000000000
+        Margins.Top = 9.000000000000000000
+        Margins.Right = 9.000000000000000000
+        Margins.Bottom = 9.000000000000000000
+        Size.Width = 264.000000000000000000
+        Size.Height = 23.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+    object Layout3: TLayout
+      Align = Bottom
+      Position.Y = 40.000000000000000000
+      Size.Width = 640.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object edtDesc: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Client
+        TabOrder = 0
+        Text = #24466#28982#12394#12427#12414#12414#12395#20170#26085#12398#19968#26522#12434#25774#12426#12383#12417#12427#12418#12398#12394#12426
+        Margins.Left = 9.000000000000000000
+        Margins.Top = 9.000000000000000000
+        Margins.Right = 9.000000000000000000
+        Margins.Bottom = 9.000000000000000000
+        Size.Width = 622.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+  end
+  object ActionList1: TActionList
+    Left = 112
+    Top = 112
+    object TakePhotoFromCameraAction1: TTakePhotoFromCameraAction
+      Category = #12513#12487#12451#12450' '#12521#12452#12502#12521#12522
+      OnDidFinishTaking = TakePhotoFromCameraAction1DidFinishTaking
+    end
+  end
+  object backGetAll: TBackendEndpoint
+    Provider = EMSProvider1
+    Params = <>
+    Resource = 'photoserver'
+    Left = 488
+    Top = 128
+  end
+  object EMSProvider1: TEMSProvider
+    ApiVersion = '1'
+    URLHost = '10.120.0.135'
+    URLPort = 8080
+    Left = 416
+    Top = 128
+  end
+  object backPostItem: TBackendEndpoint
+    Provider = EMSProvider1
+    Method = rmPOST
+    Params = <>
+    Resource = 'photoserver'
+    Left = 552
+    Top = 128
+  end
+end

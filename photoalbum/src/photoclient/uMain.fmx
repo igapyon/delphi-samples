@@ -1,0 +1,59 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'Form2'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Button1: TButton
+    Position.X = 280.000000000000000000
+    Position.Y = 32.000000000000000000
+    TabOrder = 1
+    Text = 'Button1'
+    OnClick = Button1Click
+  end
+  object ListView1: TListView
+    ItemAppearanceClassName = 'TImageListItemBottomDetailAppearance'
+    ItemEditAppearanceClassName = 'TImageListItemBottomDetailShowCheckAppearance'
+    HeaderAppearanceClassName = 'TListHeaderObjects'
+    FooterAppearanceClassName = 'TListHeaderObjects'
+    Position.X = 48.000000000000000000
+    Position.Y = 136.000000000000000000
+    Size.Width = 561.000000000000000000
+    Size.Height = 313.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+  end
+  object Button2: TButton
+    Position.X = 400.000000000000000000
+    Position.Y = 32.000000000000000000
+    TabOrder = 9
+    Text = 'Button2'
+    OnClick = Button2Click
+  end
+  object EMSProvider1: TEMSProvider
+    ApiVersion = '1'
+    URLHost = 'localhost'
+    URLPort = 8080
+    Left = 112
+    Top = 72
+  end
+  object backGetAll: TBackendEndpoint
+    Provider = EMSProvider1
+    Params = <>
+    Resource = 'photoserver'
+    Left = 200
+    Top = 72
+  end
+  object backPostItem: TBackendEndpoint
+    Provider = EMSProvider1
+    Method = rmPOST
+    Params = <>
+    Resource = 'photoserver'
+    Left = 304
+    Top = 73
+  end
+end
