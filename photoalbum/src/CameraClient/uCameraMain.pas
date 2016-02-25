@@ -64,6 +64,7 @@ var
 begin
   // いったんクリアします。
   // ここにコメントを書く。
+  // これは github への RAD Studio からのコミットの練習です。
   ListView1.Items.Clear;
 
   ms := TMemoryStream.Create;
